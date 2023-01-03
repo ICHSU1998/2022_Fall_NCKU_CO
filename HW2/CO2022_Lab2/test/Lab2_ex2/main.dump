@@ -1,0 +1,91 @@
+
+./test/Lab2_ex2/main.elf:     file format elf32-littleriscv
+./test/Lab2_ex2/main.elf
+architecture: riscv:rv32, flags 0x00000112:
+EXEC_P, HAS_SYMS, D_PAGED
+start address 0x00000000
+
+Program Header:
+0x70000003 off    0x00001074 vaddr 0x00000000 paddr 0x00000000 align 2**0
+         filesz 0x0000001a memsz 0x00000000 flags r--
+    LOAD off    0x00001000 vaddr 0x00000000 paddr 0x00000000 align 2**12
+         filesz 0x00000074 memsz 0x00000074 flags r-x
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000074  00000000  00000000  00001000  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .riscv.attributes 0000001a  00000000  00000000  00001074  2**0
+                  CONTENTS, READONLY
+SYMBOL TABLE:
+00000000 l    d  .text	00000000 .text
+00000000 l    d  .riscv.attributes	00000000 .riscv.attributes
+00000000 l    df *ABS*	00000000 setup.o
+00000000 l       .text	00000000 _start
+00000000 l       .text	00000000 init_stack
+00000008 l       .text	00000000 SystemInit
+0000000c l       .text	00000000 SystemExit
+0000001c l       .text	00000000 dead_loop
+00000000 l    df *ABS*	00000000 main.o
+00000068 l       .text	00000000 main_exit
+0000fffc g       .text	00000000 _sim_end
+00000020 g       .text	00000000 main
+00009000 g       .text	00000000 _answer
+0000fff0 g       .text	00000000 _stack
+
+
+Contents of section .text:
+ 0000 17010100 130101ff ef008001 97020100  ................
+ 0010 938202ff 1303f0ff 23a06200 6f000000  ........#.b.o...
+ 0020 1301c1ff 23208100 17940000 130484fd  ....# ..........
+ 0030 37fec3d1 130e5e18 b76e3300 938efe8f  7.....^..n3.....
+ 0040 2320c401 2322d401 17940000 130484fb  # ..#"..........
+ 0050 83020400 23145400 03530400 23266400  ....#.T..S..#&d.
+ 0060 83234400 23087400 03240100 13014100  .#D.#.t..$....A.
+ 0070 67800000                             g...            
+Contents of section .riscv.attributes:
+ 0000 41190000 00726973 63760001 0f000000  A....riscv......
+ 0010 05727633 32693270 3000               .rv32i2p0.      
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:	00010117          	auipc	sp,0x10
+   4:	ff010113          	addi	sp,sp,-16 # fff0 <_stack>
+
+00000008 <SystemInit>:
+   8:	018000ef          	jal	ra,20 <main>
+
+0000000c <SystemExit>:
+   c:	00010297          	auipc	t0,0x10
+  10:	ff028293          	addi	t0,t0,-16 # fffc <_sim_end>
+  14:	fff00313          	li	t1,-1
+  18:	0062a023          	sw	t1,0(t0)
+
+0000001c <dead_loop>:
+  1c:	0000006f          	j	1c <dead_loop>
+
+00000020 <main>:
+  20:	ffc10113          	addi	sp,sp,-4
+  24:	00812023          	sw	s0,0(sp)
+  28:	00009417          	auipc	s0,0x9
+  2c:	fd840413          	addi	s0,s0,-40 # 9000 <_answer>
+  30:	d1c3fe37          	lui	t3,0xd1c3f
+  34:	185e0e13          	addi	t3,t3,389 # d1c3f185 <_sim_end+0xd1c2f189>
+  38:	00336eb7          	lui	t4,0x336
+  3c:	8ffe8e93          	addi	t4,t4,-1793 # 3358ff <_sim_end+0x325903>
+  40:	01c42023          	sw	t3,0(s0)
+  44:	01d42223          	sw	t4,4(s0)
+  48:	00009417          	auipc	s0,0x9
+  4c:	fb840413          	addi	s0,s0,-72 # 9000 <_answer>
+  50:	00040283          	lb	t0,0(s0)
+  54:	00541423          	sh	t0,8(s0)
+  58:	00045303          	lhu	t1,0(s0)
+  5c:	00642623          	sw	t1,12(s0)
+  60:	00442383          	lw	t2,4(s0)
+  64:	00740823          	sb	t2,16(s0)
+
+00000068 <main_exit>:
+  68:	00012403          	lw	s0,0(sp)
+  6c:	00410113          	addi	sp,sp,4
+  70:	00008067          	ret

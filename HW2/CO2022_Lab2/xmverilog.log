@@ -1,0 +1,11 @@
+xmverilog(64): 22.03-s003: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+TOOL:	xmverilog	22.03-s003: Started on Oct 21, 2022 at 14:46:24 CST
+ncverilog
+	top_tb.v
+	+
+	define+T1
+	+access+r
+xmverilog: *W,NCEXDEP: Executable (ncverilog) is deprecated. Use (xmverilog) instead.
+xmverilog: *E,FILEMIS: Cannot find the provided file top_tb.v.
+xmverilog: *E,FILEMIS: Cannot find the provided file define+T1.
+TOOL:	xmverilog	22.03-s003: Exiting on Oct 21, 2022 at 14:46:24 CST  (total: 00:00:00)

@@ -1,0 +1,171 @@
+
+./test/Lab2_ex1/main.elf:     file format elf32-littleriscv
+./test/Lab2_ex1/main.elf
+architecture: riscv:rv32, flags 0x00000112:
+EXEC_P, HAS_SYMS, D_PAGED
+start address 0x00000000
+
+Program Header:
+0x70000003 off    0x00001174 vaddr 0x00000000 paddr 0x00000000 align 2**0
+         filesz 0x0000001a memsz 0x00000000 flags r--
+    LOAD off    0x00001000 vaddr 0x00000000 paddr 0x00000000 align 2**12
+         filesz 0x00000174 memsz 0x00000174 flags r-x
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000174  00000000  00000000  00001000  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .riscv.attributes 0000001a  00000000  00000000  00001174  2**0
+                  CONTENTS, READONLY
+SYMBOL TABLE:
+00000000 l    d  .text	00000000 .text
+00000000 l    d  .riscv.attributes	00000000 .riscv.attributes
+00000000 l    df *ABS*	00000000 setup.o
+00000000 l       .text	00000000 _start
+00000000 l       .text	00000000 init_stack
+00000008 l       .text	00000000 SystemInit
+0000000c l       .text	00000000 SystemExit
+0000001c l       .text	00000000 dead_loop
+00000000 l    df *ABS*	00000000 main.o
+00000168 l       .text	00000000 main_exit
+0000fffc g       .text	00000000 _sim_end
+00000020 g       .text	00000000 main
+00009000 g       .text	00000000 _answer
+0000fff0 g       .text	00000000 _stack
+
+
+Contents of section .text:
+ 0000 17010100 130101ff ef008001 97020100  ................
+ 0010 938202ff 1303f0ff 23a06200 6f000000  ........#.b.o...
+ 0020 1301c1ff 23208100 17940000 130484fd  ....# ..........
+ 0030 13039000 930330ff 338e7300 330e7e00  ......0.3.s.3.~.
+ 0040 931e2300 b38e6e00 938eee01 139f3e00  ..#...n.......>.
+ 0050 330fdf41 330fcf01 2320e401 131e1300  3..A3...# ......
+ 0060 330e6e00 330ec041 939e2300 b38e7e00  3.n.3..A..#...~.
+ 0070 b30ed041 330ede01 2322c401 332e0300  ...A3...#"..3...
+ 0080 134ffeff 130f1f00 334fe301 330ecf01  .O......3O..3...
+ 0090 b3ae0300 93cffeff 938f1f00 b3cff301  ................
+ 00a0 b38edf01 330fde01 2324e401 131ee301  ....3...#$......
+ 00b0 935eee41 139ee301 135fee41 330fdf01  .^.A....._.A3...
+ 00c0 2326e401 135e3340 132f0300 330fee01  #&...^3@./..3...
+ 00d0 93de3340 93af0300 b38ffe01 330fff01  ..3@........3...
+ 00e0 2328e401 130ed002 931e6e00 131f5e00  #(........n...^.
+ 00f0 931f2e00 338fee01 b30fff01 93df3f00  ....3.........?.
+ 0100 232af401 130eb0ff 931e3e00 b38ece41  #*........>....A
+ 0110 93de1e40 938e1e00 232cd401 130e3000  ...@....#,....0.
+ 0120 931e1e00 b38ece01 93de2e00 232ed401  ............#...
+ 0130 130e7000 930e10ff 131f1e00 330fcf01  ..p.........3...
+ 0140 135f2f40 132e0e00 330fcf01 939f1e00  ._/@....3.......
+ 0150 b38fdf01 93df2f40 93ae0e00 b38fdf01  ....../@........
+ 0160 b30fff01 2320f403 03240100 13014100  ....# ...$....A.
+ 0170 67800000                             g...            
+Contents of section .riscv.attributes:
+ 0000 41190000 00726973 63760001 0f000000  A....riscv......
+ 0010 05727633 32693270 3000               .rv32i2p0.      
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:	00010117          	auipc	sp,0x10
+   4:	ff010113          	addi	sp,sp,-16 # fff0 <_stack>
+
+00000008 <SystemInit>:
+   8:	018000ef          	jal	ra,20 <main>
+
+0000000c <SystemExit>:
+   c:	00010297          	auipc	t0,0x10
+  10:	ff028293          	addi	t0,t0,-16 # fffc <_sim_end>
+  14:	fff00313          	li	t1,-1
+  18:	0062a023          	sw	t1,0(t0)
+
+0000001c <dead_loop>:
+  1c:	0000006f          	j	1c <dead_loop>
+
+00000020 <main>:
+  20:	ffc10113          	addi	sp,sp,-4
+  24:	00812023          	sw	s0,0(sp)
+  28:	00009417          	auipc	s0,0x9
+  2c:	fd840413          	addi	s0,s0,-40 # 9000 <_answer>
+  30:	00900313          	li	t1,9
+  34:	ff300393          	li	t2,-13
+  38:	00738e33          	add	t3,t2,t2
+  3c:	007e0e33          	add	t3,t3,t2
+  40:	00231e93          	slli	t4,t1,0x2
+  44:	006e8eb3          	add	t4,t4,t1
+  48:	01ee8e93          	addi	t4,t4,30
+  4c:	003e9f13          	slli	t5,t4,0x3
+  50:	41df0f33          	sub	t5,t5,t4
+  54:	01cf0f33          	add	t5,t5,t3
+  58:	01e42023          	sw	t5,0(s0)
+  5c:	00131e13          	slli	t3,t1,0x1
+  60:	006e0e33          	add	t3,t3,t1
+  64:	41c00e33          	neg	t3,t3
+  68:	00239e93          	slli	t4,t2,0x2
+  6c:	007e8eb3          	add	t4,t4,t2
+  70:	41d00eb3          	neg	t4,t4
+  74:	01de0e33          	add	t3,t3,t4
+  78:	01c42223          	sw	t3,4(s0)
+  7c:	00032e33          	sltz	t3,t1
+  80:	fffe4f13          	not	t5,t3
+  84:	001f0f13          	addi	t5,t5,1
+  88:	01e34f33          	xor	t5,t1,t5
+  8c:	01cf0e33          	add	t3,t5,t3
+  90:	0003aeb3          	sltz	t4,t2
+  94:	fffecf93          	not	t6,t4
+  98:	001f8f93          	addi	t6,t6,1
+  9c:	01f3cfb3          	xor	t6,t2,t6
+  a0:	01df8eb3          	add	t4,t6,t4
+  a4:	01de0f33          	add	t5,t3,t4
+  a8:	01e42423          	sw	t5,8(s0)
+  ac:	01e31e13          	slli	t3,t1,0x1e
+  b0:	41ee5e93          	srai	t4,t3,0x1e
+  b4:	01e39e13          	slli	t3,t2,0x1e
+  b8:	41ee5f13          	srai	t5,t3,0x1e
+  bc:	01df0f33          	add	t5,t5,t4
+  c0:	01e42623          	sw	t5,12(s0)
+  c4:	40335e13          	srai	t3,t1,0x3
+  c8:	00032f13          	slti	t5,t1,0
+  cc:	01ee0f33          	add	t5,t3,t5
+  d0:	4033de93          	srai	t4,t2,0x3
+  d4:	0003af93          	slti	t6,t2,0
+  d8:	01fe8fb3          	add	t6,t4,t6
+  dc:	01ff0f33          	add	t5,t5,t6
+  e0:	01e42823          	sw	t5,16(s0)
+  e4:	02d00e13          	li	t3,45
+  e8:	006e1e93          	slli	t4,t3,0x6
+  ec:	005e1f13          	slli	t5,t3,0x5
+  f0:	002e1f93          	slli	t6,t3,0x2
+  f4:	01ee8f33          	add	t5,t4,t5
+  f8:	01ff0fb3          	add	t6,t5,t6
+  fc:	003fdf93          	srli	t6,t6,0x3
+ 100:	01f42a23          	sw	t6,20(s0)
+ 104:	ffb00e13          	li	t3,-5
+ 108:	003e1e93          	slli	t4,t3,0x3
+ 10c:	41ce8eb3          	sub	t4,t4,t3
+ 110:	401ede93          	srai	t4,t4,0x1
+ 114:	001e8e93          	addi	t4,t4,1
+ 118:	01d42c23          	sw	t4,24(s0)
+ 11c:	00300e13          	li	t3,3
+ 120:	001e1e93          	slli	t4,t3,0x1
+ 124:	01ce8eb3          	add	t4,t4,t3
+ 128:	002ede93          	srli	t4,t4,0x2
+ 12c:	01d42e23          	sw	t4,28(s0)
+ 130:	00700e13          	li	t3,7
+ 134:	ff100e93          	li	t4,-15
+ 138:	001e1f13          	slli	t5,t3,0x1
+ 13c:	01cf0f33          	add	t5,t5,t3
+ 140:	402f5f13          	srai	t5,t5,0x2
+ 144:	000e2e13          	slti	t3,t3,0
+ 148:	01cf0f33          	add	t5,t5,t3
+ 14c:	001e9f93          	slli	t6,t4,0x1
+ 150:	01df8fb3          	add	t6,t6,t4
+ 154:	402fdf93          	srai	t6,t6,0x2
+ 158:	000eae93          	slti	t4,t4,0
+ 15c:	01df8fb3          	add	t6,t6,t4
+ 160:	01ff0fb3          	add	t6,t5,t6
+ 164:	03f42023          	sw	t6,32(s0)
+
+00000168 <main_exit>:
+ 168:	00012403          	lw	s0,0(sp)
+ 16c:	00410113          	addi	sp,sp,4
+ 170:	00008067          	ret

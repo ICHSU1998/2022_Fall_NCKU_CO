@@ -1,0 +1,3 @@
+xmsim(64): 22.03-s003: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+xmsim: *W,NCEXDEP: Executable (ncsim) is deprecated. Use (xmsim) instead.
+xmsim: *F,NOSNAP: Snapshot 'top_tb' does not exist in the libraries.

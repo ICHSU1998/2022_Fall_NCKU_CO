@@ -1,0 +1,134 @@
+xmsim(64) 22.03-s003
+Linux 5.13.0-40-generic #45~20.04.1-Ubuntu SMP Mon Apr 4 09:38:31 UTC 2022 x86_64
+CPU cores: 48
+Limit information:
+======================================
+cputime			unlimited
+filesize		unlimited
+datasize		unlimited
+stacksize		8192 kbytes
+coredumpsize	0 kbytes
+memoryuse		unlimited
+vmemoryuse		unlimited
+descriptors		1024
+memorylocked	65536 kbytes
+maxproc			514465
+======================================
+(Special)Runtime environment variables:
+
+Runtime environment variables:
+USER=co2022_024
+LOGNAME=co2022_024
+HOME=/home/CO2022/co2022_024
+PATH=/usr/cad/synopsys/verdi/2019.06//bin:/usr/cad/cadence/XCELIUM/XCELIUM_22.03.003/tools/bin/64bit:/usr/cad/cadence/XCELIUM/XCELIUM_22.03.003/tools/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/riscv/bin
+SHELL=/bin/tcsh
+TERM=xterm
+DISPLAY=localhost:38.0
+XDG_SESSION_ID=6187
+XDG_RUNTIME_DIR=/run/user/1138
+DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1138/bus
+XDG_SESSION_TYPE=tty
+XDG_SESSION_CLASS=user
+MOTD_SHOWN=pam
+LANG=en_US.UTF-8
+LC_NUMERIC=lzh_TW
+LC_TIME=lzh_TW
+LC_MONETARY=lzh_TW
+LC_PAPER=lzh_TW
+LC_NAME=lzh_TW
+LC_ADDRESS=lzh_TW
+LC_TELEPHONE=lzh_TW
+LC_MEASUREMENT=lzh_TW
+LC_IDENTIFICATION=lzh_TW
+SSH_CLIENT=140.116.92.124 57088 22
+SSH_CONNECTION=140.116.92.124 57088 140.116.178.181 22
+SSH_TTY=/dev/pts/32
+HOSTTYPE=x86_64-linux
+VENDOR=unknown
+OSTYPE=linux
+MACHTYPE=x86_64
+SHLVL=1
+PWD=/home/CO2022/co2022_024/CO2022_Lab2
+GROUP=co2022_024
+HOST=user
+REMOTEHOST=140.116.92.124
+LD_LIBRARY_PATH=/usr/cad/synopsys/verdi/2019.06//share/PLI/IUS/LINUX64
+LM_LICENSE_FILE=26585@lstn:5280@lstn:
+SHLIB_PATH=/usr/cad/synopsys/verdi/2019.06//etc/lib/libstdc++/LINUX64/:/usr/cad/synopsys/verdi/2019.06//share/PLI/lib/LINUX64/:/usr/cad/synopsys/verdi/2019.06//share/PLI/VCS/LINUX64/:
+VERDI_HOME=/usr/cad/synopsys/verdi/2019.06/
+CDS_ARCH=lnx86
+IMPERAS_PORT_FILE=.vsp_ovp_gdb_port
+TCL_LIBRARY=/usr/cad/cadence/XCELIUM/XCELIUM_22.03.003/tools/inca/files/tcl/library
+Runtime command line arguments:
+argv[0]=ncsim
+argv[1]=top_tb
+argv[2]=+PROG=Lab2_ex2
+65 profile - 100
+          CPU/Mem usage: 0.160 sys,  0.010 user,  108.78M sys,  0.00M vm
+66 VC callback profile - scalar:0 vector:0
+67 Fri Oct 21 15:54:52 2022
+68 pliAppInit
+69 FSDB_GATE is disabled.
+70 Enable Parallel Dumping.
+71 pliAppMiscSet: New Sim Round
+72 pliEntryInit
+73 LIBSSCORE=found /usr/cad/synopsys/verdi/2019.06//share/PLI/IUS/LINUX64/libsscore_xcelium171.so through $LD_LIBRARY_PATH setting.
+74 argv[0]: top.fsdb
+75 argv[0]: +struct
+76 argv[1]: +mda
+77 argv[2]: (handle)0x510a628 top_tb.top
+78 FSDB Dumper for Xcelium, Release Verdi_P-2019.06, Linux x86_64/64bit, 05/26/2019
+79 (C) 1996 - 2019 by Synopsys, Inc.
+80 ***********************************************************************
+81 *  WARNING -                                                          *
+82 *  The simulator version is newer than the FSDB Writer version which  *
+83 *  may cause abnormal behavior, please contact Cadence support for    *
+84 *  assistance.                                                        *
+85 ***********************************************************************
+86 sps_call_fsdbDumpfile at 0 : /home/CO2022/co2022_ta01/workspace/CO2022_tmp/top_tb.sv(174)
+87 argv[0]: top.fsdb
+88 *Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
+89 *Verdi* : Create FSDB file 'top.fsdb'
+90 sps_call_fsdbDumpvars at 0 : /home/CO2022/co2022_ta01/workspace/CO2022_tmp/top_tb.sv(175)
+91 argv[0]: +struct
+92 argv[1]: +mda
+93 argv[2]: (handle)0x510a608 top_tb.top
+94 *Verdi* : Begin traversing the scope (top_tb.top), layer (0).
+95 *Verdi* : Enable +struct and +mda dumping.
+96 *Verdi* : End of traversing.
+97 fsdbDumpvars traverse var: profile - 
+          CPU/Mem usage: 0.170 sys,  0.170 user,  219.13M sys,  0.00M vm
+                   incr: 0.010 sys,  0.160 user,  27.18M sys,  0.00M vm
+                   accu: 0.010 sys,  0.160 user,  27.18M sys,  0.00M vm
+              accu incr: 0.010 sys,  0.160 user,  27.18M sys,  0.00M vm
+
+          Count usage: 131314 var,  131177 idcode,  131179 callback
+                 incr: 131314 var,  131177 idcode,  131179 callback
+                 accu: 131314 var,  131177 idcode,  131179 callback
+            accu incr: 131314 var,  131177 idcode,  131179 callback
+98 VC callback profile - scalar:0 vector:0
+99 Fri Oct 21 15:54:52 2022
+100 fsdbDumpvars: profile - 
+          CPU/Mem usage: 0.170 sys,  0.220 user,  228.66M sys,  0.00M vm
+                   incr: 0.000 sys,  0.050 user,  9.53M sys,  0.00M vm
+                   accu: 0.010 sys,  0.210 user,  36.71M sys,  0.00M vm
+              accu incr: 0.000 sys,  0.050 user,  9.53M sys,  0.00M vm
+
+          Count usage: 131314 var,  131177 idcode,  131179 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 131314 var,  131177 idcode,  131179 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+101 VC callback profile - scalar:43 vector:131134
+102 Fri Oct 21 15:54:52 2022
+103 End of simulation at 28500
+104 VC callback profile - scalar:521 vector:132027
+105 Fri Oct 21 15:54:52 2022
+106 Begin FSDB profile info:
+107 FSDB Writer : bc1(521) bcn(132027) mtf/stf(0/0)
+FSDB Writer elapsed time : flush(0.033028) io wait(0.000000) theadpool wait(0.000000) target functin(0.000000)
+FSDB Writer cpu time : MT Compression : 0
+108 End FSDB profile info
+109 Parallel profile    -  Flush:3 Expand:0 ProduceWait:0 ConsumerWait:0 BlockUsed:1
+110                        ProduceTime:0.434514792 ConsumerTime:0.000000000 Buffer:64MB
+111 SimExit
+112 Sim process exit
