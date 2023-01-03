@@ -2,12 +2,12 @@
 
 HW1: Introduction and Environment Setup
 
-HW2: Assembly1
+HW2: Assembly Lab1
 
-HW3: Assembly2
+HW3: Assembly Lab2
 
-HW4: Verilog1
+HW4: Verilog Lab1
 
-HW5: Verilog2
+HW5: Verilog Lab2
 
-HW6: Verilog3
+HW6: Verilog Lab3
