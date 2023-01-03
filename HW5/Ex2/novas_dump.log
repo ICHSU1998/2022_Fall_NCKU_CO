@@ -1,0 +1,183 @@
+xmsim(64) 22.03-s003
+Linux 5.13.0-40-generic #45~20.04.1-Ubuntu SMP Mon Apr 4 09:38:31 UTC 2022 x86_64
+CPU cores: 48
+Limit information:
+======================================
+cputime			unlimited
+filesize		unlimited
+datasize		unlimited
+stacksize		8192 kbytes
+coredumpsize	0 kbytes
+memoryuse		unlimited
+vmemoryuse		unlimited
+descriptors		1024
+memorylocked	65536 kbytes
+maxproc			514465
+======================================
+(Special)Runtime environment variables:
+
+Runtime environment variables:
+USER=co2022_024
+LOGNAME=co2022_024
+HOME=/home/CO2022/co2022_024
+PATH=/usr/cad/synopsys/verdi/2019.06//bin:/usr/cad/cadence/XCELIUM/XCELIUM_22.03.003/tools/bin/64bit:/usr/cad/cadence/XCELIUM/XCELIUM_22.03.003/tools/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/riscv/bin
+SHELL=/bin/tcsh
+TERM=xterm
+DISPLAY=localhost:12.0
+XDG_SESSION_ID=4109
+XDG_RUNTIME_DIR=/run/user/1138
+DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1138/bus
+XDG_SESSION_TYPE=tty
+XDG_SESSION_CLASS=user
+MOTD_SHOWN=pam
+LANG=en_US.UTF-8
+LC_NUMERIC=lzh_TW
+LC_TIME=lzh_TW
+LC_MONETARY=lzh_TW
+LC_PAPER=lzh_TW
+LC_NAME=lzh_TW
+LC_ADDRESS=lzh_TW
+LC_TELEPHONE=lzh_TW
+LC_MEASUREMENT=lzh_TW
+LC_IDENTIFICATION=lzh_TW
+SSH_CLIENT=140.116.92.124 51871 22
+SSH_CONNECTION=140.116.92.124 51871 140.116.164.70 22
+SSH_TTY=/dev/pts/3
+HOSTTYPE=x86_64-linux
+VENDOR=unknown
+OSTYPE=linux
+MACHTYPE=x86_64
+SHLVL=1
+PWD=/home/CO2022/co2022_024/CO2022_Lab5/Ex2
+GROUP=co2022_024
+HOST=user
+REMOTEHOST=140.116.92.124
+LD_LIBRARY_PATH=/usr/cad/synopsys/verdi/2019.06//share/PLI/IUS/LINUX64
+LM_LICENSE_FILE=26585@lstn:5280@lstn:
+SHLIB_PATH=/usr/cad/synopsys/verdi/2019.06//etc/lib/libstdc++/LINUX64/:/usr/cad/synopsys/verdi/2019.06//share/PLI/lib/LINUX64/:/usr/cad/synopsys/verdi/2019.06//share/PLI/VCS/LINUX64/:
+VERDI_HOME=/usr/cad/synopsys/verdi/2019.06/
+_XRUNROOT_=/usr/cad/cadence/XCELIUM/XCELIUM_22.03.003/tools
+_IRUNROOT_=/usr/cad/cadence/XCELIUM/XCELIUM_22.03.003/tools
+_HELIUMROOT_=/usr/cad/cadence/XCELIUM/XCELIUM_22.03.003/tools
+CDS_ARCH=lnx86
+XMRUNMODE=xmverilog:./xcelium.d/run.lnx8664.22.03.d
+XRUNBATCH=FALSE
+AMS_LOG_FILE_NAME=xmverilog.log
+IMPERAS_PORT_FILE=.vsp_ovp_gdb_port
+TCL_LIBRARY=/usr/cad/cadence/XCELIUM/XCELIUM_22.03.003/tools/inca/files/tcl/library
+Runtime command line arguments:
+argv[0]=xmverilog
+argv[1]=tb_Vending2.sv
+argv[2]=+define+FSDB
+argv[3]=+access+r
+72 profile - 100
+          CPU/Mem usage: 0.060 sys,  0.010 user,  108.73M sys,  0.00M vm
+73 VC callback profile - scalar:0 vector:0
+74 Tue Jan  3 13:10:43 2023
+75 pliAppInit
+76 FSDB_GATE is disabled.
+77 Enable Parallel Dumping.
+78 pliAppMiscSet: New Sim Round
+79 pliEntryInit
+80 LIBSSCORE=found /usr/cad/synopsys/verdi/2019.06//share/PLI/IUS/LINUX64/libsscore_xcelium171.so through $LD_LIBRARY_PATH setting.
+81 argv[0]: tb_Vending.fsdb
+82 argv[0]: +struct
+83 argv[1]: +mda
+84 argv[2]: (handle)0x5fa4ad8 tb_Vending
+85 argv[0]: Vending2.fsdb
+86 argv[0]: +struct
+87 argv[1]: +mda
+88 argv[2]: (handle)0x5fa4ab8 tb_Vending.u_Vending
+89 FSDB Dumper for Xcelium, Release Verdi_P-2019.06, Linux x86_64/64bit, 05/26/2019
+90 (C) 1996 - 2019 by Synopsys, Inc.
+91 ***********************************************************************
+92 *  WARNING -                                                          *
+93 *  The simulator version is newer than the FSDB Writer version which  *
+94 *  may cause abnormal behavior, please contact Cadence support for    *
+95 *  assistance.                                                        *
+96 ***********************************************************************
+97 sps_call_fsdbDumpfile at 0 : /home/CO2022/co2022_024/CO2022_Lab5/Ex2/tb_Vending2.sv(52)
+98 argv[0]: tb_Vending.fsdb
+99 *Verdi* : Create FSDB file 'tb_Vending.fsdb'
+100 sps_call_fsdbDumpvars at 0 : /home/CO2022/co2022_024/CO2022_Lab5/Ex2/tb_Vending2.sv(53)
+101 argv[0]: +struct
+102 argv[1]: +mda
+103 argv[2]: (handle)0x5fa4ad8 tb_Vending
+104 *Verdi* : Begin traversing the scope (tb_Vending), layer (0).
+105 *Verdi* : Enable +struct and +mda dumping.
+106 *Verdi* : End of traversing.
+107 fsdbDumpvars traverse var: profile - 
+          CPU/Mem usage: 0.060 sys,  0.010 user,  195.93M sys,  0.00M vm
+                   incr: 0.000 sys,  0.000 user,  4.02M sys,  0.00M vm
+                   accu: 0.000 sys,  0.000 user,  4.02M sys,  0.00M vm
+              accu incr: 0.000 sys,  0.000 user,  4.02M sys,  0.00M vm
+
+          Count usage: 38 var,  38 idcode,  38 callback
+                 incr: 38 var,  38 idcode,  38 callback
+                 accu: 38 var,  38 idcode,  38 callback
+            accu incr: 38 var,  38 idcode,  38 callback
+108 VC callback profile - scalar:0 vector:0
+109 Tue Jan  3 13:10:43 2023
+110 fsdbDumpvars: profile - 
+          CPU/Mem usage: 0.060 sys,  0.010 user,  197.12M sys,  0.00M vm
+                   incr: 0.000 sys,  0.000 user,  1.19M sys,  0.00M vm
+                   accu: 0.000 sys,  0.000 user,  5.21M sys,  0.00M vm
+              accu incr: 0.000 sys,  0.000 user,  1.19M sys,  0.00M vm
+
+          Count usage: 38 var,  38 idcode,  38 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 38 var,  38 idcode,  38 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+111 VC callback profile - scalar:7 vector:31
+112 Tue Jan  3 13:10:43 2023
+113 sps_call_fsdbDumpfile at 0 : /home/CO2022/co2022_024/CO2022_Lab5/Ex2/tb_Vending2.sv(202)
+114 argv[0]: Vending2.fsdb
+115 *Verdi* : Create FSDB file 'Vending2.fsdb'
+116 sps_call_fsdbDumpvars at 0 : /home/CO2022/co2022_024/CO2022_Lab5/Ex2/tb_Vending2.sv(203)
+117 argv[0]: +struct
+118 argv[1]: +mda
+119 argv[2]: (handle)0x5fa4b08 tb_Vending.u_Vending
+120 *Verdi* : Begin traversing the scope (tb_Vending.u_Vending), layer (0).
+121 *Verdi* : Enable +struct and +mda dumping.
+122 *Verdi* : End of traversing.
+123 fsdbDumpvars traverse var: profile - 
+          CPU/Mem usage: 0.060 sys,  0.010 user,  206.52M sys,  0.00M vm
+                   incr: 0.000 sys,  0.000 user,  0.00M sys,  0.00M vm
+                   accu: 0.000 sys,  0.000 user,  0.00M sys,  0.00M vm
+              accu incr: 0.000 sys,  0.000 user,  0.00M sys,  0.00M vm
+
+          Count usage: 56 var,  38 idcode,  38 callback
+                 incr: 18 var,  0 idcode,  0 callback
+                 accu: 18 var,  0 idcode,  0 callback
+            accu incr: 18 var,  0 idcode,  0 callback
+124 VC callback profile - scalar:7 vector:33
+125 Tue Jan  3 13:10:43 2023
+126 fsdbDumpvars: profile - 
+          CPU/Mem usage: 0.060 sys,  0.010 user,  206.52M sys,  0.00M vm
+                   incr: 0.000 sys,  0.000 user,  0.00M sys,  0.00M vm
+                   accu: 0.000 sys,  0.000 user,  0.00M sys,  0.00M vm
+              accu incr: 0.000 sys,  0.000 user,  0.00M sys,  0.00M vm
+
+          Count usage: 56 var,  38 idcode,  38 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 18 var,  0 idcode,  0 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+127 VC callback profile - scalar:11 vector:47
+128 Tue Jan  3 13:10:43 2023
+129 End of simulation at 115000
+130 VC callback profile - scalar:130 vector:369
+131 Tue Jan  3 13:10:43 2023
+132 Begin FSDB profile info:
+133 FSDB Writer : bc1(130) bcn(369) mtf/stf(0/0)
+FSDB Writer elapsed time : flush(0.012912) io wait(0.000000) theadpool wait(0.000000) target functin(0.000000)
+FSDB Writer cpu time : MT Compression : 0
+134 End FSDB profile info
+135 Begin FSDB profile info:
+136 FSDB Writer : bc1(0) bcn(0) mtf/stf(0/0)
+FSDB Writer elapsed time : flush(0.037198) io wait(0.000000) theadpool wait(0.000000) target functin(0.000000)
+FSDB Writer cpu time : MT Compression : 0
+137 End FSDB profile info
+138 Parallel profile    -  Flush:5 Expand:0 ProduceWait:0 ConsumerWait:0 BlockUsed:1
+139                        ProduceTime:0.089288928 ConsumerTime:0.000000000 Buffer:64MB
+140 SimExit
+141 Sim process exit
